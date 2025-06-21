@@ -22,8 +22,6 @@ URL Shortner/
 │
 ├── views/               # EJS Templates
 │   ├── home.ejs
-│   ├── about.ejs
-│   └── contact.ejs
 │
 ├── .env                 # MongoDB connection URL
 ├── .gitignore
