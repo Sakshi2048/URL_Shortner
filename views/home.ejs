@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URL Shortener</title>
+  </head>
+  <body>
+    <h1>URL Shortener</h1>
+
+    <!-- Form to enter original URL -->
+    <form action="/url" method="POST">
+      <input
+        type="url"
+        name="originalUrl"
+        placeholder="Enter original URL"
+        required
+      />
+      <button type="submit">Shorten</button>
+    </form>
+
+    <h2>All Shortened URLs:</h2>
+    <ul>
+      <% if (urls && urls.length > 0) { %>
+        <% urls.forEach(u => { %>
+          <li>
+            <strong>Original:</strong> <%= u.originalUrl %> <br />
+            <strong>Shortened:</strong> <a href="/<%= u.shortId %>">/<%= u.shortId %></a>
+          </li>
+        <% }) %>
+      <% } else { %>
+        <li>No URLs yet.</li>
+      <% } %>
+    </ul>
+  </body>
+</html>
