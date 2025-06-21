@@ -9,7 +9,8 @@
     <h1>URL Shortener</h1>
 
     <!-- Form to enter original URL -->
-    <form action="/url" method="POST">
+   <form action="/url" method="POST">
+
       <input
         type="url"
         name="originalUrl"
@@ -21,16 +22,14 @@
 
     <h2>All Shortened URLs:</h2>
     <ul>
-      <% if (urls && urls.length > 0) { %>
+      
         <% urls.forEach(u => { %>
           <li>
-            <strong>Original:</strong> <%= u.originalUrl %> <br />
-            <strong>Shortened:</strong> <a href="/<%= u.shortId %>">/<%= u.shortId %></a>
+             <%= u.originalUrl %>  - 
+             <a href="/url/<%= u.shortId %>"><%= u.shortId %></a>
           </li>
         <% }) %>
-      <% } else { %>
-        <li>No URLs yet.</li>
-      <% } %>
+     
     </ul>
   </body>
 </html>

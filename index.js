@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import urlRoutes from "./routes/url.js";
-import URL from "./models/url.js";
+import staticRouter from "./routes/staticRouter.js";
 
 const app = express();
 const PORT = 5000;
@@ -15,12 +15,9 @@ mongoose.connect(MONGO_URL)
     .then(() => console.log("✅ MongoDB connected"))
     .catch((err) => console.error("❌ MongoDB connection error:", err));
 
-app.use("/", urlRoutes);
+app.use("/url", urlRoutes);       // For API routes
+app.use("/", staticRouter);
 
-app.get("/", async (req, res) => {
-  const urls = await URL.find({});
-  return res.render("home", { urls });
-});
 
 app.listen(PORT, () => {
     console.log(`🚀 Server is running on http://localhost:${PORT}`);
