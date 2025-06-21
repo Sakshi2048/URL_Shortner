@@ -4,9 +4,10 @@ A simple Node.js + Express.js based URL Shortener web app with EJS templating an
 
 ---
 
+
 ## 📁 Project Structure
 
-\`\`\`
+```
 URL Shortner/
 │
 ├── controllers/         # Controller functions (create, redirect, analytics)
@@ -29,7 +30,7 @@ URL Shortner/
 ├── index.js             # Main server file
 ├── package.json
 └── README.md
-\`\`\`
+```
 
 ---
 
@@ -47,39 +48,38 @@ URL Shortner/
 
 ### 1. Clone the repository
 
-\`\`\`bash
+```bash
 git clone https://github.com/Sakshi2048/URL_Shortner.git
 cd URL_Shortner
-\`\`\`
+```
 
 ### 2. Install dependencies
 
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ### 3. Configure Environment Variables
 
-Create a \`.env\` file in the root directory:
+Create a `.env` file in the root directory:
 
-\`\`\`env
+```env
 MONGO_URL=mongodb://127.0.0.1:27017/urlShortener
-\`\`\`
+```
 
 Or use your MongoDB Atlas URI if hosted remotely.
 
 ### 4. Run the App
 
-\`\`\`bash
-
+```bash
 nodemon index.js
-\`\`\`
+```
 
 The app should now be running on:
 
-\`\`\`
+```
 http://localhost:5000
-\`\`\`
+```
 
 ---
 
@@ -95,12 +95,13 @@ http://localhost:5000
 
 ## 📮 Example Postman Request
 
-**POST** \`http://localhost:5000/url\`
+**POST** `http://localhost:5000/url`
 
-\`\`\`json
+```json
 {
   "originalUrl": "https://www.google.com"
 }
-\`\`\`
+```
 
 ---
+
