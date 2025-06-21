@@ -21,7 +21,7 @@ URL Shortner/
 │   └── staticRouter.js
 │
 ├── views/               # EJS Templates
-│   ├── home.ejs
+│   └── home.ejs
 │
 ├── .env                 # MongoDB connection URL
 ├── .gitignore
