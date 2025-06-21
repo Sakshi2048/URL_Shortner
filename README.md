@@ -89,7 +89,6 @@ http://localhost:5000
 - ✅ Redirect shortened URLs to original
 - ✅ View all stored short links
 - ✅ Responsive UI using TailwindCSS
-- ✅ About & Contact pages
 
 ---
 
