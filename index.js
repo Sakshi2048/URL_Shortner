@@ -2,16 +2,21 @@ import express from "express";
 import mongoose from "mongoose";
 import urlRoutes from "./routes/url.js";
 import staticRouter from "./routes/staticRouter.js";
+import dotenv from "dotenv"
+
+dotenv.config()
 
 const app = express();
 const PORT = 5000;
-const MONGO_URL = "mongodb://127.0.0.1:27017/urlShortener";
 
+// Middlewares
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // for form submissions
+
 app.set("view engine","ejs");
 app.set("views","./views")
 
-mongoose.connect(MONGO_URL)
+mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log("✅ MongoDB connected"))
     .catch((err) => console.error("❌ MongoDB connection error:", err));
 
